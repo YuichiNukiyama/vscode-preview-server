@@ -1,0 +1,82 @@
+{
+  "name": "vscode-preview-server",
+  "displayName": "Preview on Web Server",
+  "description": "Preview Web Page on Web Server.",
+  "version": "0.1.0",
+  "publisher": "Yuichi Nukiyama",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.preview",
+    "onCommand:extension.launch"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "PreviewServer",
+      "properties": {
+        "previewServer.port": {
+          "type": "number",
+          "default": 8080,
+          "description": "Port number of the Web Server."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.preview",
+        "title": "Preview on side panel"
+      },
+      {
+        "command": "extension.launch",
+        "title": "Launch on default browser"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.preview",
+          "when": "resourceLangId == html"
+        },
+        {
+          "command": "extension.launch",
+          "when": "resourceLangId == html"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "extension.preview",
+          "when": "resourceLangId == html"
+        },
+        {
+          "command": "extension.launch",
+          "when": "resourceLangId == html"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40",
+    "mocha": "^2.3.3",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.5",
+    "vscode": "^1.0.3"
+  },
+  "dependencies": {
+    "node-static": "^0.7.9",
+    "typescript": "^2.1.5"
+  }
+}
