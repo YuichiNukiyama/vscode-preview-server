@@ -2,14 +2,26 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "Yuichi Nukiyama",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuichiNukiyama/vscode-preview-server"
+  },
+  "bugs": {
+    "url": "https://github.com/YuichiNukiyama/vscode-preview-server/issues"
+  },
   "engines": {
     "vscode": "^1.5.0"
   },
   "categories": [
     "Other"
+  ],
+  "keywords": [
+    "HTML",
+    "Preview",
+    "VSCode"
   ],
   "activationEvents": [
     "onCommand:extension.preview",
