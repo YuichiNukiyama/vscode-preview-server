@@ -23,6 +23,7 @@
     "Preview",
     "VSCode"
   ],
+  "icon": "images/icon.png",
   "activationEvents": [
     "onCommand:extension.preview",
     "onCommand:extension.launch"
