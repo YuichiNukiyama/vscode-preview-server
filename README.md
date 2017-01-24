@@ -19,10 +19,12 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-`Preview on side panel` can't use CDN.
+`Preview on side panel` don't support CDN, Link etc.
 
 ## Release Notes
 
 ### 0.1.0
+publish to extension Marketplace.
 
+### 0.1.0
 Initial upload. This extension haven't registered to Marketplace, yet.
