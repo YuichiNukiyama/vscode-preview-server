@@ -3,7 +3,7 @@ import * as vscode from "vscode";
 import { Utility } from "./Utility";
 
 export class BrowserContentProvider implements vscode.TextDocumentContentProvider {
-    private _onDidChange = new vscode.EventEmitter<vscode.Uri>();
+    // private _onDidChange = new vscode.EventEmitter<vscode.Uri>();
 
     public provideTextDocumentContent() {
         const editor = vscode.window.activeTextEditor;
@@ -18,12 +18,13 @@ export class BrowserContentProvider implements vscode.TextDocumentContentProvide
 
         return `<iframe src="${uri}" frameBorder="0" width="100%" height="1000px" />`;
     }
-
+    /*
     get onDidChange(): vscode.Event<vscode.Uri> {
         return this._onDidChange.event;
     }
-
+    */
     public update(uri: vscode.Uri) {
-        this._onDidChange.fire(uri);
+        console.log(uri);
+        // this._onDidChange.fire(uri);
     }
 }
