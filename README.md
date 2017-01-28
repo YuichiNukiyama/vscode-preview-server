@@ -23,8 +23,11 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-### 0.1.0
+### 0.2.0
 publish to extension Marketplace.
 
 ### 0.1.0
 Initial upload. This extension haven't registered to Marketplace, yet.
+
+## Lisence
+[MIT](https://github.com/YuichiNukiyama/vscode-preview-server/blob/master/LICENSE)
