@@ -18,18 +18,28 @@ export class Utility {
         const fileServer = new Server(rootPath, { cache: -1, serverInfo: "preview-on-webserver" });
         const options = vscode.workspace.getConfiguration("previewServer");
 
-        this.server = http.createServer((req, res) => {
-            req.addListener("end", () => {
-                fileServer.serve(req, res, (err) => {
-                    if (err) {
-                        console.error("Error serving " + req.url + " - " + err.message);
-                        res.writeHead(err.status, err.headers);
-                        res.end();
-                    } else {
-                        res.end();
-                    }
-                });
-            }).resume();
-        }).listen(options.get("port"));
+        if (this.server === undefined || !this.server.listening) {
+            this.server = http.createServer((req, res) => {
+                req.addListener("end", () => {
+                    fileServer.serve(req, res, (err) => {
+                        if (err) {
+                            console.error("Error serving " + req.url + " - " + err.message);
+                            res.writeHead(err.status, err.headers);
+                            res.end();
+                        } else {
+                            res.end();
+                        }
+                    });
+                }).resume();
+            }).listen(options.get("port"));
+        }
+    }
+
+    public static stopWebServer() {
+        if (this.server) {
+            console.log(this.server.listening);
+            this.server.close();
+            console.log(this.server.listening);
+        }
     }
 }

@@ -9,13 +9,16 @@ export function activate(context: vscode.ExtensionContext) {
     const registration = vscode.workspace.registerTextDocumentContentProvider("http", provider);
     let previewUri = vscode.Uri.parse("http://localhost");
 
+    /*
     vscode.workspace.onDidChangeTextDocument((e: vscode.TextDocumentChangeEvent) => {
         if (e.document === vscode.window.activeTextEditor.document) {
             provider.update(previewUri);
         }
     });
+    */
 
     let disposable: any = vscode.commands.registerCommand("extension.preview", () => {
+        Utility.startWebServer();
         // set ViewColumn
         let viewColumn: vscode.ViewColumn;
         if (vscode.window.activeTextEditor.viewColumn < 3) {
@@ -31,12 +34,16 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     let disposable2: any = vscode.commands.registerCommand("extension.launch", () => {
+        Utility.startWebServer();
         const uri = Utility.getUriOfActiveEditor();
         return vscode.commands.executeCommand("vscode.open", uri);
     });
 
+    let disposable3: any = vscode.commands.registerCommand("extension.stop", () => {
+        Utility.stopWebServer();
+    });
 
-    context.subscriptions.push(disposable, disposable2, registration);
+    context.subscriptions.push(disposable, disposable2, disposable3, registration);
 }
 
 export function deactivate() {

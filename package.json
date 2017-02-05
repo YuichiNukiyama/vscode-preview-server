@@ -26,7 +26,8 @@
   "icon": "images/icon.png",
   "activationEvents": [
     "onCommand:extension.preview",
-    "onCommand:extension.launch"
+    "onCommand:extension.launch",
+    "onCommand:extension.stop"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -49,6 +50,10 @@
       {
         "command": "extension.launch",
         "title": "Launch on default browser"
+      },
+      {
+        "command": "extension.stop",
+        "title": "Stop the web server"
       }
     ],
     "menus": {
