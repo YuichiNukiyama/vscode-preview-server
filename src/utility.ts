@@ -1,10 +1,9 @@
 import * as vscode from "vscode";
 import * as http from "http";
-import * as net from "net";
 import { Server } from "node-static";
 
 export class Utility {
-    private static server: net.Server;
+    private static server: http.Server;
 
     public static getUriOfActiveEditor() {
         const fileName = vscode.window.activeTextEditor.document.fileName;
@@ -31,15 +30,13 @@ export class Utility {
                         }
                     });
                 }).resume();
-            }).listen(options.get("port"));
+            }).listen(options.get("port")) as http.Server;
         }
     }
 
     public static stopWebServer() {
         if (this.server) {
-            console.log(this.server.listening);
             this.server.close();
-            console.log(this.server.listening);
         }
     }
 }
