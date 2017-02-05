@@ -39,4 +39,9 @@ export class Utility {
             this.server.close();
         }
     }
+
+    public static resumeWebServer() {
+        this.stopWebServer();
+        this.startWebServer();
+    }
 }

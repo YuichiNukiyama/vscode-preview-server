@@ -17,6 +17,10 @@ export function activate(context: vscode.ExtensionContext) {
     });
     */
 
+    vscode.workspace.onDidChangeConfiguration(() => {
+        Utility.resumeWebServer();
+    });
+
     let disposable: any = vscode.commands.registerCommand("extension.preview", () => {
         Utility.startWebServer();
         // set ViewColumn
