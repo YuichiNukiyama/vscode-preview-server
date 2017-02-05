@@ -1,7 +1,10 @@
-# Change Log
-All notable changes to the "live-preview-for-js" extension will be documented in this file.
+## Release Notes
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### 0.3.0
+add featutre which stop the web server.
 
-## [Unreleased]
-- Initial release
+### 0.2.0
+publish to extension Marketplace.
+
+### 0.1.0
+Initial upload. This extension haven't registered to Marketplace, yet.
