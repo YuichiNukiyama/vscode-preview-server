@@ -1,5 +1,9 @@
 ## Release Notes
 
+### 0.3.1
+- show message when stop or resume the Web Server.
+- activate unit test.
+
 ### 0.3.0
 add featutre which stop the web server.
 

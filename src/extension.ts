@@ -19,6 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     vscode.workspace.onDidChangeConfiguration(() => {
         Utility.resumeWebServer();
+        vscode.window.showInformationMessage("Resume the Web Server.");
     });
 
     let disposable: any = vscode.commands.registerCommand("extension.preview", () => {
@@ -45,6 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposable3: any = vscode.commands.registerCommand("extension.stop", () => {
         Utility.stopWebServer();
+        vscode.window.showInformationMessage("Stop the Web Server successfully.");
     });
 
     context.subscriptions.push(disposable, disposable2, disposable3, registration);
