@@ -1,9 +1,12 @@
 import * as assert from "assert";
-import { Utility } from "../src/utility";
+import * as browserSync from "browser-sync";
+import { Server } from "../src/server";
 
-suite("utility Tests", () => {
-    test("getUriOfActiveEditor", () => {
-        let result = Utility.getUriOfActiveEditor();
-        assert.equal("localhost:8080", result.authority);
+
+suite("Server Tests", () => {
+    test("start server", () => {
+        Server.start(".", 8888, true);
+        assert.ok(browserSync.has("vscode-preview-server"));
+        Server.stop();
     });
 });

@@ -1,5 +1,12 @@
 ## Release Notes
 
+### 0.4.0
+ - change dependent package from node-static to browser-sync.
+ - add auto-reload feature.
+ - add sync option.
+ - add resume command.
+ - and a few tweaks.
+
 ### 0.3.1
 - show message when stop or resume the Web Server.
 - activate unit test.

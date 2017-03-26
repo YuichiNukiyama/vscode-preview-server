@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -39,21 +39,30 @@
           "type": "number",
           "default": 8080,
           "description": "Port number of the Web Server."
+        },
+        "previewServer.sync": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether synchronized or not."
         }
       }
     },
     "commands": [
       {
         "command": "extension.preview",
-        "title": "Preview on side panel"
+        "title": "vscode-preview-server: Preview on side panel"
       },
       {
         "command": "extension.launch",
-        "title": "Launch on default browser"
+        "title": "vscode-preview-server: Launch on default browser"
       },
       {
         "command": "extension.stop",
-        "title": "Stop the web server"
+        "title": "vscode-preview-server: Stop the web server"
+      },
+      {
+        "command": "extension.resume",
+        "title": "vscode-preview-server: Resume the web server"
       }
     ],
     "menus": {
@@ -86,6 +95,7 @@
     "test": "node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
+    "@types/browser-sync": "0.0.34",
     "@types/mocha": "^2.2.32",
     "@types/node": "^7.0.5",
     "mocha": "^2.3.3",
@@ -94,7 +104,7 @@
     "vscode": "^1.0.3"
   },
   "dependencies": {
-    "node-static": "^0.7.9",
+    "browser-sync": "^2.18.8",
     "typescript": "^2.1.5"
   }
 }
