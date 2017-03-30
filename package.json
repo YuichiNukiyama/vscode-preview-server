@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -27,7 +27,8 @@
   "activationEvents": [
     "onCommand:extension.preview",
     "onCommand:extension.launch",
-    "onCommand:extension.stop"
+    "onCommand:extension.stop",
+    "onCommand:extension.resume"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -63,6 +64,24 @@
       {
         "command": "extension.resume",
         "title": "vscode-preview-server: Resume the web server"
+      }
+    ],
+    "keybindings":[
+      {
+        "command": "extension.preview",
+        "key": "ctrl+shift+p"
+      },
+      {
+        "command": "extension.launch",
+        "key": "ctrl+shift+l"
+      },
+      {
+        "command": "extension.stop",
+        "key": "ctrl+shift+s"
+      },
+      {
+        "command": "extension.resume",
+        "key": "ctrl+shift+r"
       }
     ],
     "menus": {

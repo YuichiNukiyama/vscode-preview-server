@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 0.4.1
+ - add shortcut key bindings.
+
 ### 0.4.0
  - change dependent package from node-static to browser-sync.
  - add auto-reload feature.
