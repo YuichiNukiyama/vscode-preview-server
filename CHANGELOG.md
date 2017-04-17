@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 0.5.0
+ - add proxy option
+
 ### 0.4.1
  - add shortcut key bindings.
 

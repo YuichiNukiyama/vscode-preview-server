@@ -2,7 +2,7 @@ import * as browserSync from "browser-sync";
 
 export class Server {
 
-    public static start(rootPath: string, port: number, isSync: boolean) {
+    public static start(rootPath: string, port: number, isSync: boolean, proxy = "") {
         // get browserSync instance.
         let bs: browserSync.BrowserSyncInstance;
         if (!browserSync.has("vscode-preview-server")) {
@@ -11,20 +11,32 @@ export class Server {
             bs = browserSync.get("vscode-preview-server");
         }
 
-        bs.init({
-            server: {
-                baseDir: rootPath,
-                directory: true
-            },
-            open: false,
-            port: port,
-            codeSync: isSync
-        }, (err) => {
-            if (err) {
-                console.log(err);
-                bs.notify("Error is occured.");
-            }
-        });
+        if (proxy === "") {
+            bs.init({
+                server: {
+                    baseDir: rootPath,
+                    directory: true
+                },
+                open: false,
+                port: port,
+                codeSync: isSync
+            }, (err) => {
+                if (err) {
+                    console.log(err);
+                    bs.notify("Error is occured.");
+                }
+            });
+        } else {
+            bs.init({
+                proxy: proxy,
+                serveStatic: ["."]
+            }, (err) => {
+                if (err) {
+                    console.log(err);
+                    bs.notify("Error is occured.");
+                }
+            });
+        }
     }
 
     public static stop() {

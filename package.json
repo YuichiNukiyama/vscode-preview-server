@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -40,6 +40,11 @@
           "type": "number",
           "default": 8080,
           "description": "Port number of the Web Server."
+        },
+        "previewServer.proxy": {
+          "type": "string",
+          "default": "",
+          "description": "Wrap your vhost with a proxy URL to view your site."
         },
         "previewServer.sync": {
           "type": "boolean",

@@ -66,10 +66,15 @@ export function activate(context: vscode.ExtensionContext) {
 function startServer() {
     const options = vscode.workspace.getConfiguration("previewServer");
     const port = options.get("port") as number;
+    const proxy = options.get("proxy") as string;
     const isSync = options.get("sync") as boolean;
     const rootPath = vscode.workspace.rootPath || vscode.window.activeTextEditor.document.fileName;
 
-    Server.start(rootPath, port, isSync);
+    if (proxy === "") {
+        Server.start(rootPath, port, isSync);
+    } else {
+        Server.start(rootPath, port, isSync, proxy);
+    }
 }
 
 function resumeServer() {
