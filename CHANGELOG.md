@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 0.6.0
+ - add random port feature
+
 ### 0.5.0
  - add proxy option
 

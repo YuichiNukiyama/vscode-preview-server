@@ -64,6 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function startServer() {
+    Utility.setRandomPort();
     const options = vscode.workspace.getConfiguration("previewServer");
     const port = options.get("port") as number;
     const proxy = options.get("proxy") as string;
@@ -83,4 +84,5 @@ function resumeServer() {
 }
 
 export function deactivate() {
+    Server.stop();
 }

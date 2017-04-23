@@ -18,7 +18,7 @@ The main features are as follows.
 
 This extension contributes the following settings:
 
-* `previewServer.port`: Port number of the Web Server. Default setting is *8080*.
+* `previewServer.port`: Port number of the Web Server. If you set *null*, vscode-preview-server generate random number, and set port as random number. Default setting is *8080*.
 * `previewServer.proxy`: Set proxy. This is usefull when execute web app on another web server. Default setting is *""*.
 * `previewServer.sync`: Whether synchronized or not. Default setting is *true*.
 
