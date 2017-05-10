@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -36,6 +36,11 @@
       "type": "object",
       "title": "PreviewServer",
       "properties": {
+        "previewServer.isWatchConfiguration": {
+          "type": "boolean",
+          "default": true,
+          "description": "Controls whether resume the Web Server or not, when change settings."
+        },
         "previewServer.port": {
           "type": ["number", "null"],
           "default": 8080,

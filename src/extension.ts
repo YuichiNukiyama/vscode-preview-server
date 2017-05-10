@@ -19,8 +19,12 @@ export function activate(context: vscode.ExtensionContext) {
 
     // When configuration is changed, resume web server.
     vscode.workspace.onDidChangeConfiguration(() => {
-        resumeServer();
-        vscode.window.showInformationMessage("Resume the Web Server.");
+        const settings = vscode.workspace.getConfiguration("previewServer")
+                            .get("isWatchConfiguration") as boolean;
+        if (settings) {
+            resumeServer();
+            vscode.window.showInformationMessage("Resume the Web Server.");
+        }
     });
 
     // When file is saved, reload browser.

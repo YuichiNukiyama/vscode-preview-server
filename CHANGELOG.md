@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 0.6.1
+ - add isWatchConfiguration option
+
 ### 0.6.0
  - add random port feature
 
