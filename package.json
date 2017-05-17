@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {

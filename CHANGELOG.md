@@ -1,5 +1,9 @@
 ## Release Notes
 
+### 0.6.2
+ - set default background-color of side panel
+ - fix typo
+
 ### 0.6.1
  - add isWatchConfiguration option
 
