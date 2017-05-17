@@ -16,7 +16,8 @@ export class BrowserContentProvider implements vscode.TextDocumentContentProvide
 				</body>`;
         }
 
-        return `<iframe src="${uri}" frameBorder="0" width="100%" height="1000px" />`;
+        return `<style>iframe { background-color: white } </style>
+                <iframe src="${uri}" frameBorder="0" width="100%" height="1000px" />`;
     }
 
     get onDidChange(): vscode.Event<vscode.Uri> {
