@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 0.7.0
+ - support open file
+
 ### 0.6.2
  - set default background-color of side panel
  - fix typo

@@ -3,10 +3,15 @@ import * as vscode from "vscode";
 export class Utility {
     public static getUriOfActiveEditor() {
         const fileName = vscode.window.activeTextEditor.document.fileName;
-        const relativePath = vscode.workspace.asRelativePath(fileName);
         const options = vscode.workspace.getConfiguration("previewServer");
         const port = options.get("port") as number;
         const proxy = options.get("proxy") as string;
+        let relativePath = vscode.workspace.asRelativePath(fileName);
+
+        if (vscode.workspace.rootPath === undefined) {
+            let paths = relativePath.split("/");
+            relativePath = paths[paths.length - 1];
+        }
 
         if (proxy === "") {
             return vscode.Uri.parse(`http://localhost:${port}/${relativePath}`);
@@ -28,5 +33,17 @@ export class Utility {
                 vscode.window.showInformationMessage(`change previewServer.port setting to ${port}`);
             });
         }
+    }
+
+    /**
+     * When vscode.workspace.rootPath is undefined (When we use `open file`, this value will be undefined),
+     * we use filepath without file name.
+     * @param relativePath
+     */
+    public static getOpenFilePath(relativePath: string) {
+        let paths = relativePath.split("\\");
+        // remove file name.
+        paths.pop();
+        return paths.join("\\");
     }
 }

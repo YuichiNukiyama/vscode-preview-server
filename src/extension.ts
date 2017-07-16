@@ -73,7 +73,7 @@ function startServer() {
     const port = options.get("port") as number;
     const proxy = options.get("proxy") as string;
     const isSync = options.get("sync") as boolean;
-    const rootPath = vscode.workspace.rootPath || vscode.window.activeTextEditor.document.fileName;
+    const rootPath = vscode.workspace.rootPath || Utility.getOpenFilePath(vscode.window.activeTextEditor.document.fileName);
 
     if (proxy === "") {
         Server.start(rootPath, port, isSync);
