@@ -11,8 +11,10 @@ export class Server {
             bs = browserSync.get("vscode-preview-server");
         }
 
+        let options: browserSync.Options;
+
         if (proxy === "") {
-            bs.init({
+            options = {
                 server: {
                     baseDir: rootPath,
                     directory: true
@@ -20,23 +22,20 @@ export class Server {
                 open: false,
                 port: port,
                 codeSync: isSync
-            }, (err) => {
-                if (err) {
-                    console.log(err);
-                    bs.notify("Error is occured.");
-                }
-            });
+            };
         } else {
-            bs.init({
+            options = {
                 proxy: proxy,
                 serveStatic: ["."]
-            }, (err) => {
-                if (err) {
-                    console.log(err);
-                    bs.notify("Error is occured.");
-                }
-            });
+            };
         }
+
+        bs.init(options, (err) => {
+            if (err) {
+                console.log(err);
+                bs.notify("Error is occured.");
+            }
+        });
     }
 
     public static stop() {
