@@ -1,5 +1,10 @@
 ## Release Notes
 
+### 0.8.0
+ - support UI option
+ - some tweaks
+ - change README
+
 ### 0.7.0
  - support open file
 

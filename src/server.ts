@@ -1,8 +1,9 @@
 import * as browserSync from "browser-sync";
+import { UiOption } from "./utility";
 
 export class Server {
 
-    public static start(rootPath: string, port: number, isSync: boolean, proxy = "") {
+    public static start(rootPath: string, port: number, isSync: boolean, proxy = "", ui: UiOption = null) {
         // get browserSync instance.
         let bs: browserSync.BrowserSyncInstance;
         if (!browserSync.has("vscode-preview-server")) {
@@ -30,11 +31,22 @@ export class Server {
             };
         }
 
+        if (ui.port && ui.weinrePort) {
+            options.ui = {
+                port: ui.port,
+                weinre: {
+                    port: ui.weinrePort
+                }
+            };
+        }
+
+
         bs.init(options, (err) => {
             if (err) {
                 console.log(err);
                 bs.notify("Error is occured.");
             }
+
         });
     }
 

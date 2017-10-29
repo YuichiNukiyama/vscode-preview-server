@@ -47,3 +47,8 @@ export class Utility {
         return paths.join("\\");
     }
 }
+
+export interface UiOption {
+    port: number;
+    weinrePort: number;
+}

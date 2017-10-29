@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -28,7 +28,8 @@
     "onCommand:extension.preview",
     "onCommand:extension.launch",
     "onCommand:extension.stop",
-    "onCommand:extension.resume"
+    "onCommand:extension.resume",
+    "onCommand:extension.ui"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -55,6 +56,21 @@
           "type": "boolean",
           "default": true,
           "description": "Whether synchronized or not."
+        },
+        "previewServer.ui": {
+          "type": "object",
+          "properties": {
+            "port": {
+              "type": "number",
+              "default": 3001,
+              "description": "Port number of UI."
+            },
+            "weinrePort": {
+              "type": "number",
+              "default": 8081,
+              "description": "Port number of weinre."
+            }
+          }
         }
       }
     },
@@ -74,6 +90,10 @@
       {
         "command": "extension.resume",
         "title": "vscode-preview-server: Resume the web server"
+      },
+      {
+        "command": "extension.ui",
+        "title": "vscode-preview-server: Show UI Page"
       }
     ],
     "keybindings":[
@@ -92,6 +112,10 @@
       {
         "command": "extension.resume",
         "key": "ctrl+shift+r"
+      },
+      {
+        "command": "extension.ui",
+        "key": "ctrl+shift+u"
       }
     ],
     "menus": {

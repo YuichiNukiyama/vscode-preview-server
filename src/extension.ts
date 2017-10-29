@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { BrowserContentProvider } from "./browserContentProvider";
 import { Server } from "./server";
-import { Utility } from "./utility";
+import { Utility, UiOption } from "./utility";
 
 export function activate(context: vscode.ExtensionContext) {
     // start web server
@@ -64,7 +64,19 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showInformationMessage("Resume the Web Server.");
     });
 
-    context.subscriptions.push(disposable, disposable2, disposable3, disposable4, registration);
+    let disposable5: any = vscode.commands.registerCommand("extension.ui", () => {
+        let port = 3001;
+        const ui = vscode.workspace.getConfiguration("previewServer").get("ui") as UiOption;
+
+        if (ui.port) {
+            port = ui.port;
+        }
+
+        const uri = vscode.Uri.parse(`http://localhost:${port}`);
+        return vscode.commands.executeCommand("vscode.open", uri);
+    });
+
+    context.subscriptions.push(disposable, disposable2, disposable3, disposable4, disposable5, registration);
 }
 
 function startServer() {
@@ -73,9 +85,10 @@ function startServer() {
     const port = options.get("port") as number;
     const proxy = options.get("proxy") as string;
     const isSync = options.get("sync") as boolean;
+    const ui = options.get("ui") as UiOption;
     const rootPath = vscode.workspace.rootPath || Utility.getOpenFilePath(vscode.window.activeTextEditor.document.fileName);
 
-    Server.start(rootPath, port, isSync, proxy);
+    Server.start(rootPath, port, isSync, proxy, ui);
 }
 
 function resumeServer() {
