@@ -51,7 +51,20 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposable2: any = vscode.commands.registerCommand("extension.launch", () => {
         const uri = Utility.getUriOfActiveEditor();
-        return vscode.commands.executeCommand("vscode.open", uri);
+        const options = vscode.workspace.getConfiguration("previewServer");
+        const browsers = options.get("browsers") as string[];
+        const ignoreDefaultBrowser = options.get("ignoreDefaultBrowser") as boolean;
+
+        if (browsers === null && !ignoreDefaultBrowser) {
+            return vscode.commands.executeCommand("vscode.open", uri);
+        } else if (browsers !== null  && !ignoreDefaultBrowser) {
+            Utility.openBrowser(browsers);
+            return vscode.commands.executeCommand("vscode.open", uri);
+        } else if (browsers !== null && ignoreDefaultBrowser) {
+            return Utility.openBrowser(browsers);
+        } else {
+            return vscode.window.showErrorMessage("You should set browser option or change ignoreDefultBrowser to true.");
+        }
     });
 
     let disposable3: any = vscode.commands.registerCommand("extension.stop", () => {

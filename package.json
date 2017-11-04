@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -37,13 +37,35 @@
       "type": "object",
       "title": "PreviewServer",
       "properties": {
+        "previewServer.browsers": {
+          "type": "array",
+          "default": null,
+          "description": "Browsers.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "firefox",
+              "chrome",
+              "opera",
+              "safari"
+            ]
+          }
+        },
+        "previewServer.ignoreDefaultBrowser": {
+          "type": "boolean",
+          "default": false,
+          "description": "Ignore default browsers."
+        },
         "previewServer.isWatchConfiguration": {
           "type": "boolean",
           "default": true,
           "description": "Controls whether resume the Web Server or not, when change settings."
         },
         "previewServer.port": {
-          "type": ["number", "null"],
+          "type": [
+            "number",
+            "null"
+          ],
           "default": 8080,
           "description": "Port number of the Web Server."
         },
@@ -81,7 +103,7 @@
       },
       {
         "command": "extension.launch",
-        "title": "vscode-preview-server: Launch on default browser"
+        "title": "vscode-preview-server: Launch on browser"
       },
       {
         "command": "extension.stop",
@@ -96,7 +118,7 @@
         "title": "vscode-preview-server: Show UI Page"
       }
     ],
-    "keybindings":[
+    "keybindings": [
       {
         "command": "extension.preview",
         "key": "ctrl+shift+p"
@@ -151,6 +173,7 @@
     "@types/browser-sync": "0.0.34",
     "@types/mocha": "^2.2.32",
     "@types/node": "^7.0.5",
+    "@types/opener": "^1.4.0",
     "mocha": "^2.3.3",
     "tslint": "^4.3.1",
     "typescript": "^2.1.5",
@@ -158,6 +181,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.18.8",
+    "opener": "^1.4.3",
     "typescript": "^2.1.5"
   }
 }

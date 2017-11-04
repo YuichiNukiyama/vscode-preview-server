@@ -1,5 +1,10 @@
 ## Release Notes
 
+### 0.9.0
+ - add browsers option
+ - add ignoreDefaultBrowser option
+ - add example of settings to README
+
 ### 0.8.0
  - support UI option
  - some tweaks

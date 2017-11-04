@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+const opener = require("opener");
 
 export class Utility {
     public static getUriOfActiveEditor() {
@@ -33,6 +34,14 @@ export class Utility {
                 vscode.window.showInformationMessage(`change previewServer.port setting to ${port}`);
             });
         }
+    }
+
+    public static openBrowser(browsers: string[]) {
+
+        const url = decodeURIComponent(Utility.getUriOfActiveEditor().toString());
+        browsers.forEach((browser) => {
+            opener([browser, url]);
+        });
     }
 
     /**
