@@ -4,6 +4,7 @@
  - add browsers option
  - add ignoreDefaultBrowser option
  - add example of settings to README
+ - add badges t0 README
 
 ### 0.8.0
  - support UI option

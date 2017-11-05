@@ -1,5 +1,9 @@
 # vscode-preview-server
 
+[![](https://vsmarketplacebadge.apphb.com/version/yuichinukiyama.vscode-preview-server.svg)](https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server)
+[![](https://vsmarketplacebadge.apphb.com/installs/yuichinukiyama.vscode-preview-server.svg)](https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server)
+[![](https://vsmarketplacebadge.apphb.com/rating/yuichinukiyama.vscode-preview-server.svg)](https://marketplace.visualstudio.com/items?itemName=yuichinukiyama.vscode-preview-server)
+
 ## Features
 
 This extension provide preview of HTML which execute on web server.
