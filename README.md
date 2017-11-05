@@ -34,7 +34,11 @@ This extension contributes the following settings:
 {
     "previewServer.browsers": ["firefox", "chrome"],
     "previewServer.ignoreDefaultBroswer": true,
-    "previewServer.port": 9999
+    "previewServer.port": 9999,
+    "previewServer.ui": {
+        "port": 3001,
+        "weinrePort": 8081
+    }
 }
 ```
 
