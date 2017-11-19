@@ -13,7 +13,7 @@
     "url": "https://github.com/YuichiNukiyama/vscode-preview-server/issues"
   },
   "engines": {
-    "vscode": "^1.6.0"
+    "vscode": "^1.17.0"
   },
   "categories": [
     "Other"
@@ -182,6 +182,6 @@
   "dependencies": {
     "browser-sync": "^2.18.8",
     "opener": "^1.4.3",
-    "typescript": "^2.1.5"
+    "typescript": "^2.6.1"
   }
 }
