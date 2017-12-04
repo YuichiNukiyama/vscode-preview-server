@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { BrowserContentProvider } from "./browserContentProvider";
 import { Server } from "./server";
-import { Utility, UiOption } from "./utility";
+import { Utility, UiOption, Space } from "./utility";
 
 export function activate(context: vscode.ExtensionContext) {
     // start web server
@@ -89,6 +89,7 @@ export function activate(context: vscode.ExtensionContext) {
         return vscode.commands.executeCommand("vscode.open", uri);
     });
 
+    context.subscriptions.push(vscode.workspace.onDidChangeWorkspaceFolders(() => resumeServer()));
     context.subscriptions.push(disposable, disposable2, disposable3, disposable4, disposable5, registration);
 }
 
@@ -99,7 +100,27 @@ function startServer() {
     const proxy = options.get("proxy") as string;
     const isSync = options.get("sync") as boolean;
     const ui = options.get("ui") as UiOption;
-    const rootPath = vscode.workspace.rootPath || Utility.getOpenFilePath(vscode.window.activeTextEditor.document.fileName);
+    const startupProject = options.get("startupProject") as string;
+    const space = Utility.checkSpace();
+    let rootPath = "";
+
+    if (space === Space.File) {
+        rootPath = Utility.getOpenFilePath(vscode.window.activeTextEditor.document.fileName);
+    } else if (space === Space.Folder || (space === Space.Workspace && !startupProject)) {
+        rootPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
+    } else {
+        for (let folder of vscode.workspace.workspaceFolders) {
+            const workspaceName = vscode.workspace.getWorkspaceFolder(folder.uri).name;
+            if (workspaceName === startupProject) {
+                rootPath = folder.uri.fsPath;
+                break;
+            }
+        }
+
+        if (rootPath === "") {
+            vscode.window.showErrorMessage("startupProject option is null, or invalide value.");
+        }
+    }
 
     Server.start(rootPath, port, isSync, proxy, ui);
 }

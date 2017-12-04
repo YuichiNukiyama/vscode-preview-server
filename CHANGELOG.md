@@ -1,5 +1,10 @@
 ## Release Notes
 
+### 1.0.0
+ - support multi root folder
+ - version up VS Code engine
+ - add tag on Github
+
 ### 0.9.0
  - add browsers option
  - add ignoreDefaultBrowser option

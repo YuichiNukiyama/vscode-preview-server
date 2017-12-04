@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -21,7 +21,8 @@
   "keywords": [
     "HTML",
     "Preview",
-    "VSCode"
+    "VSCode",
+    "multi-root ready"
   ],
   "icon": "images/icon.png",
   "activationEvents": [
@@ -73,6 +74,11 @@
           "type": "string",
           "default": "",
           "description": "Wrap your vhost with a proxy URL to view your site."
+        },
+        "previewServer.startupProject": {
+          "type": "string",
+          "default": null,
+          "description": "Name of startup project. This setting is meaningful only when in the workspace."
         },
         "previewServer.sync": {
           "type": "boolean",
