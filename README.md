@@ -31,7 +31,7 @@ This extension contributes the following settings:
 * `previewServer.proxy`: Set proxy. This is usefull when execute web app on another web server. Default setting is *""*.
 * `previewServer.sync`: Controls whether synchronized or not. Default setting is *true*.
 * `previewServer.ui`: Port number of UI Page. Default setting is *3001*.
-* `startupProject`: Name of startup project. This setting is meaningful only when in the workspace. This value the name of the folder. When using this workspace and omitting this value, the first folder becomes the startup project Default setting is null.
+* `startupProject`: Name of startup project. This setting is meaningful only when in the workspace. This value is the name of the folder. When using this workspace and omitting this value, the first folder becomes the startup project Default setting is null.
 
 ### Simple example
 
