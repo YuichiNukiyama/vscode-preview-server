@@ -1,0 +1,15 @@
+{
+    "extension.preview.title": "vscode-preview-server: サイドパネルでプレビュー表示",
+    "extension.launch.title": "vscode-preview-server: ブラウザーで起動",
+    "extension.stop.title": "vscode-preview-server: Web サーバーを停止",
+    "extension.resume.title": "vscode-preview-server: Web サーバーを再起動",
+    "extension.ui.title": "vscode-preview-server: UI ページを表示",
+    "previewServer.browsers.description": "プレビュー表示するブラウザー。",
+    "previewServer.ignoreDefaultBrowser.description": "既定のブラウザーを起動しない。",
+    "previewServer.isWatchConfiguration.description": "設定を変更したとき、Web サーバーを再起動するかどうか。",
+    "previewServer.port.description": "Web サーバーのポート番号",
+    "previewServer.proxy.description": "プロキシ URL で仮想ホストをラップして、サイトを表示します。",
+    "previewServer.startupProject.description": "起動プロジェクト名。この設定は、ワークスペースを使用している場合のみ意味があります。",
+    "previewServer.sync.description": "非同期かどうか。",
+    "previewServer.ui.description": "UI ページの設定"
+}

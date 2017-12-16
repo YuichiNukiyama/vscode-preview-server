@@ -1,0 +1,15 @@
+{
+    "extension.preview.title": "vscode-preview-server: Preview on side panel",
+    "extension.launch.title": "vscode-preview-server: Launch on browser",
+    "extension.stop.title": "vscode-preview-server: Stop the web server",
+    "extension.resume.title": "vscode-preview-server: Resume the web server",
+    "extension.ui.title": "vscode-preview-server: Show UI Page",
+    "previewServer.browsers.description": "Browsers to launch for preview.",
+    "previewServer.ignoreDefaultBrowser.description": "Ignore default browsers.",
+    "previewServer.isWatchConfiguration.description": "Controls whether resume the web Server or not, when change settings.",
+    "previewServer.port.description": "Port number of the web Server.",
+    "previewServer.proxy.description": "Wrap your vhost with a proxy URL to view your site.",
+    "previewServer.startupProject.description": "Name of startup project. This setting is meaningful only when in the workspace.",
+    "previewServer.sync.description": "Whether synchronized or not.",
+    "previewServer.ui.description": "Settings for UI page."
+}

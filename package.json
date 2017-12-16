@@ -41,7 +41,7 @@
         "previewServer.browsers": {
           "type": "array",
           "default": null,
-          "description": "Browsers.",
+          "description": "%previewServer.browsers.description%",
           "items": {
             "type": "string",
             "enum": [
@@ -55,12 +55,12 @@
         "previewServer.ignoreDefaultBrowser": {
           "type": "boolean",
           "default": false,
-          "description": "Ignore default browsers."
+          "description": "%previewServer.ignoreDefaultBrowser.description%"
         },
         "previewServer.isWatchConfiguration": {
           "type": "boolean",
           "default": true,
-          "description": "Controls whether resume the Web Server or not, when change settings."
+          "description": "%previewServer.isWatchConfiguration.description%"
         },
         "previewServer.port": {
           "type": [
@@ -68,7 +68,7 @@
             "null"
           ],
           "default": 8080,
-          "description": "Port number of the Web Server."
+          "description": "%previewServer.port.description%"
         },
         "previewServer.proxy": {
           "type": "string",
@@ -78,15 +78,16 @@
         "previewServer.startupProject": {
           "type": "string",
           "default": null,
-          "description": "Name of startup project. This setting is meaningful only when in the workspace."
+          "description": "%previewServer.startupProject.description%"
         },
         "previewServer.sync": {
           "type": "boolean",
           "default": true,
-          "description": "Whether synchronized or not."
+          "description": "%previewServer.sync.description%"
         },
         "previewServer.ui": {
           "type": "object",
+          "description": "%previewServer.ui.description%",
           "properties": {
             "port": {
               "type": "number",
@@ -105,23 +106,23 @@
     "commands": [
       {
         "command": "extension.preview",
-        "title": "vscode-preview-server: Preview on side panel"
+        "title": "%extension.preview.title%"
       },
       {
         "command": "extension.launch",
-        "title": "vscode-preview-server: Launch on browser"
+        "title": "%extension.launch.title%"
       },
       {
         "command": "extension.stop",
-        "title": "vscode-preview-server: Stop the web server"
+        "title": "%extension.stop.title%"
       },
       {
         "command": "extension.resume",
-        "title": "vscode-preview-server: Resume the web server"
+        "title": "%extension.resume.title%"
       },
       {
         "command": "extension.ui",
-        "title": "vscode-preview-server: Show UI Page"
+        "title": "%extension.ui.title%"
       }
     ],
     "keybindings": [
