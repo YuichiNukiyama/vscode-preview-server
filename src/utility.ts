@@ -1,5 +1,5 @@
 import { window, workspace, Uri } from "vscode";
-import { relative } from "path";
+
 const opener = require("opener");
 
 export class Utility {
