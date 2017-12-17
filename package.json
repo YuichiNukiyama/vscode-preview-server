@@ -183,12 +183,11 @@
     "@types/opener": "^1.4.0",
     "mocha": "^2.3.3",
     "tslint": "^4.3.1",
-    "typescript": "^2.1.5",
+    "typescript": "^2.6.2",
     "vscode": "^1.0.3"
   },
   "dependencies": {
     "browser-sync": "^2.18.8",
-    "opener": "^1.4.3",
-    "typescript": "^2.6.1"
+    "opener": "^1.4.3"
   }
 }
