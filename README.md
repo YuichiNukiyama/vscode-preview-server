@@ -51,7 +51,7 @@ This extension contributes the following settings:
 
 ```json
 {
-    "previewServer.stratupProject": "Product"
+    "previewServer.startupProject": "Product"
 }
 ```
 
@@ -63,7 +63,7 @@ This extension contributes the following settings:
 			"path": "foo"
 		},
 		{
-            "name": "Test",
+			"name": "Test",
 			"path": "bar"
 		}
 	],
