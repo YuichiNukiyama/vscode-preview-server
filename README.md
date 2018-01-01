@@ -73,6 +73,14 @@ This extension contributes the following settings:
 }
 ```
 
+## How to build locally
+
+1. Ensure that you have `gulp-cli` installed globally using `npm i -g gulp-cli`.
+1. Run `npm install` to bring in the dependencies.
+1. Run `gulp build` to produce i18n files.
+1. Press `F5` key to launch extension.
+
+
 ## Known Issues
 
 `Preview on side panel` somethimes don't work with CDN, Link etc.

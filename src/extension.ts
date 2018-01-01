@@ -2,6 +2,9 @@ import * as vscode from "vscode";
 import { BrowserContentProvider } from "./browserContentProvider";
 import { Server } from "./server";
 import { Utility, UiOption, Space } from "./utility";
+import * as nls from "vscode-nls";
+
+const localize = nls.config(process.env.VSCODE_NLS_CONFIG)();
 
 export function activate(context: vscode.ExtensionContext) {
     // start web server
@@ -23,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
                             .get("isWatchConfiguration") as boolean;
         if (settings) {
             resumeServer();
-            vscode.window.showInformationMessage("Resume the Web Server.");
+            vscode.window.showInformationMessage(localize("resumeServer.text", "Resume the Web Server."));
         }
     });
 
@@ -45,7 +48,8 @@ export function activate(context: vscode.ExtensionContext) {
 
         return vscode.commands.executeCommand("vscode.previewHtml", previewUri, viewColumn, "Preview with WebServer").then(() => {
         }, (reason) => {
-            vscode.window.showErrorMessage(reason);
+            console.error(reason);
+            vscode.window.showErrorMessage(localize("previewError.text", "Preview failed."));
         });
     });
 
@@ -63,18 +67,18 @@ export function activate(context: vscode.ExtensionContext) {
         } else if (browsers !== null && ignoreDefaultBrowser) {
             return Utility.openBrowser(browsers);
         } else {
-            return vscode.window.showErrorMessage("You should set browser option or change ignoreDefultBrowser to true.");
+            return vscode.window.showErrorMessage(localize("launchError.text", "You should set browser option or change ignoreDefultBrowser to true."));
         }
     });
 
     let disposable3: any = vscode.commands.registerCommand("extension.stop", () => {
         Server.stop();
-        vscode.window.showInformationMessage("Stop the Web Server successfully.");
+        vscode.window.showInformationMessage(localize("stopServer.text", "Stop the Web Server successfully."));
     });
 
     let disposable4: any = vscode.commands.registerCommand("extension.resume", () => {
         resumeServer();
-        vscode.window.showInformationMessage("Resume the Web Server.");
+        vscode.window.showInformationMessage(localize("resumeServer.text2", "Resume the Web Server."));
     });
 
     let disposable5: any = vscode.commands.registerCommand("extension.ui", () => {
@@ -118,7 +122,7 @@ function startServer() {
         }
 
         if (rootPath === "") {
-            vscode.window.showErrorMessage("startupProject option is null, or invalide value.");
+            vscode.window.showErrorMessage(localize("startupProjectError.text", "startupProject option is null or invalide value."));
         }
     }
 

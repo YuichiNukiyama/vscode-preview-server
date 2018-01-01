@@ -1,5 +1,9 @@
 ## Release Notes
 
+### 1.0.1
+ - support localization (japanese)
+ - fix typo
+
 ### 1.0.0
  - support multi root folder
  - version up VS Code engine

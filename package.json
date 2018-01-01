@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "yuichinukiyama",
   "license": "MIT",
   "repository": {
@@ -181,13 +181,22 @@
     "@types/mocha": "^2.2.32",
     "@types/node": "^7.0.5",
     "@types/opener": "^1.4.0",
+    "del": "^3.0.0",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-filter": "^5.1.0",
+    "gulp-typescript": "^3.2.3",
     "mocha": "^2.3.3",
-    "tslint": "^4.3.1",
+    "run-sequence": "^2.2.0",
+    "tslint": "^4.5.1",
     "typescript": "^2.6.2",
-    "vscode": "^1.0.3"
+    "vsce": "^1.35.0",
+    "vscode": "^1.0.3",
+    "vscode-nls-dev": "^2.1.6"
   },
   "dependencies": {
     "browser-sync": "^2.18.8",
-    "opener": "^1.4.3"
+    "opener": "^1.4.3",
+    "vscode-nls": "^2.0.2"
   }
 }
