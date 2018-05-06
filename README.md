@@ -25,7 +25,7 @@ The main features are as follows.
 This extension contributes the following settings:
 
 * `previewServer.browsers`: Browsers to launch. Even if you do not set this option, default browser launch if the ignoreDefaultBrowser is false. Default setting is *null*.
-* `previewServer.ignoreDefaultBroswer`: Controls whether launch default browser or not. Default setting is *false*.
+* `previewServer.ignoreDefaultBrowser`: Controls whether launch default browser or not. Default setting is *false*.
 * `previewServer.isWatchConfiguration`: Controls whether resume the Web Server or not, when change settings. Default setting is *true*.
 * `previewServer.port`: Port number of the Web Server. If you set *null*, vscode-preview-server generate random number, and set port as random number. Default setting is *8080*.
 * `previewServer.proxy`: Set proxy. This is usefull when execute web app on another web server. Default setting is *""*.
