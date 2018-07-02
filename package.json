@@ -73,7 +73,7 @@
         "previewServer.proxy": {
           "type": "string",
           "default": "",
-          "description": "Wrap your vhost with a proxy URL to view your site."
+          "description": "%previewServer.proxy.description%"
         },
         "previewServer.startupProject": {
           "type": "string",
@@ -196,7 +196,7 @@
     "vscode-nls-dev": "^2.1.6"
   },
   "dependencies": {
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.24.4",
     "opener": "^1.4.3",
     "vscode-nls": "^2.0.2"
   }
