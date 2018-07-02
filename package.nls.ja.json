@@ -6,6 +6,7 @@
 	"extension.ui.title": "vscode-preview-server: UI ページを表示",
 	"previewServer.browsers.description": "プレビュー表示するブラウザー。",
 	"previewServer.ignoreDefaultBrowser.description": "既定のブラウザーを起動しない。",
+	"previewServer.ignoreNotification.description": "通知を表示するかどうか。",
 	"previewServer.isWatchConfiguration.description": "設定を変更したとき、Web サーバーを再起動するかどうか。",
 	"previewServer.port.description": "Web サーバーのポート番号",
 	"previewServer.proxy.description": "プロキシ URL で仮想ホストをラップして、サイトを表示します。",

@@ -6,6 +6,7 @@
     "extension.ui.title": "vscode-preview-server: Show UI Page",
     "previewServer.browsers.description": "Browsers to launch for preview.",
     "previewServer.ignoreDefaultBrowser.description": "Ignore default browsers.",
+    "previewServer.ignoreNotification.description": "Controls wheter display notification or not.",
     "previewServer.isWatchConfiguration.description": "Controls whether resume the web Server or not, when change settings.",
     "previewServer.port.description": "Port number of the web Server.",
     "previewServer.proxy.description": "Wrap your vhost with a proxy URL to view your site.",

@@ -7,6 +7,9 @@ import * as nls from "vscode-nls";
 const localize = nls.config(process.env.VSCODE_NLS_CONFIG)();
 
 export function activate(context: vscode.ExtensionContext) {
+    const options = vscode.workspace.getConfiguration("previewServer");
+    const ignoreNotification = options.get("ignoreNotification") as boolean;
+    
     // start web server
     startServer();
 
@@ -26,7 +29,9 @@ export function activate(context: vscode.ExtensionContext) {
                             .get("isWatchConfiguration") as boolean;
         if (settings) {
             resumeServer();
-            vscode.window.showInformationMessage(localize("resumeServer.text", "Resume the Web Server."));
+            if (!ignoreNotification){
+                vscode.window.showInformationMessage(localize("resumeServer.text", "Resume the Web Server."));
+            }
         }
     });
 
@@ -49,7 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
         return vscode.commands.executeCommand("vscode.previewHtml", previewUri, viewColumn, "Preview with WebServer").then(() => {
         }, (reason) => {
             console.error(reason);
-            vscode.window.showErrorMessage(localize("previewError.text", "Preview failed."));
+            if (!ignoreNotification) {
+                vscode.window.showErrorMessage(localize("previewError.text", "Preview failed."));
+            }
         });
     });
 
@@ -73,12 +80,16 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposable3: any = vscode.commands.registerCommand("extension.stop", () => {
         Server.stop();
-        vscode.window.showInformationMessage(localize("stopServer.text", "Stop the Web Server successfully."));
+        if (!ignoreNotification) {
+            vscode.window.showInformationMessage(localize("stopServer.text", "Stop the Web Server successfully."));
+        }
     });
 
     let disposable4: any = vscode.commands.registerCommand("extension.resume", () => {
         resumeServer();
-        vscode.window.showInformationMessage(localize("resumeServer.text2", "Resume the Web Server."));
+        if (!ignoreNotification) {
+            vscode.window.showInformationMessage(localize("resumeServer.text2", "Resume the Web Server."));
+        }
     });
 
     let disposable5: any = vscode.commands.registerCommand("extension.ui", () => {
@@ -103,6 +114,7 @@ function startServer() {
     const port = options.get("port") as number;
     const proxy = options.get("proxy") as string;
     const isSync = options.get("sync") as boolean;
+    const ignoreNotification = options.get("ignoreNotification") as boolean;
     const ui = options.get("ui") as UiOption;
     const startupProject = options.get("startupProject") as string;
     const space = Utility.checkSpace();
@@ -121,7 +133,7 @@ function startServer() {
             }
         }
 
-        if (rootPath === "") {
+        if (rootPath === "" && !ignoreNotification) {
             vscode.window.showErrorMessage(localize("startupProjectError.text", "startupProject option is null or invalide value."));
         }
     }

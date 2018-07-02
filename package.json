@@ -57,6 +57,11 @@
           "default": false,
           "description": "%previewServer.ignoreDefaultBrowser.description%"
         },
+        "previewServer.ignoreNotification": {
+          "type": "boolean",
+          "default": false,
+          "description": "%previewServer.ignoreNotification.description%"
+        },
         "previewServer.isWatchConfiguration": {
           "type": "boolean",
           "default": true,

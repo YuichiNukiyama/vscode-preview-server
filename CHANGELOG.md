@@ -1,5 +1,10 @@
 ## Release Notes
 
+### 1.1.0
+ - add notification option
+ - update browser-sync
+ - fix typo
+
 ### 1.0.1
  - support localization (japanese)
  - fix typo
