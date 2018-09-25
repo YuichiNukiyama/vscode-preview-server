@@ -4,12 +4,12 @@ import { Server } from "./server";
 import { Utility, UiOption, Space } from "./utility";
 import * as nls from "vscode-nls";
 
-const localize = nls.config(process.env.VSCODE_NLS_CONFIG)();
+const localize = nls.config({locale: process.env.VSCODE_NLS_CONFIG})();
 
 export function activate(context: vscode.ExtensionContext) {
     const options = vscode.workspace.getConfiguration("previewServer");
     const ignoreNotification = options.get("ignoreNotification") as boolean;
-    
+
     // start web server
     startServer();
 
