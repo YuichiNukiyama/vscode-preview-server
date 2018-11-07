@@ -1,5 +1,9 @@
 ## Release Notes
 
+### 1.2.0
+ - update minimum VS Code version to 1.23
+ - change vscode.previewHtml to WebView #32
+
 ### 1.1.0
  - add notification option
  - update browser-sync
