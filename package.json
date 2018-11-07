@@ -16,7 +16,7 @@
     "url": "https://github.com/YuichiNukiyama/vscode-preview-server/issues"
   },
   "engines": {
-    "vscode": "^1.17.0"
+    "vscode": "^1.23.0"
   },
   "categories": [
     "Other"
@@ -204,7 +204,7 @@
     "vscode-nls-dev": "^3.2.2"
   },
   "dependencies": {
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.3",
     "opener": "^1.5.1",
     "vscode-nls": "^4.0.0"
   }
