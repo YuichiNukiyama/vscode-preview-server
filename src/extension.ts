@@ -5,6 +5,7 @@ import { Utility, UiOption, Space } from "./utility";
 import * as nls from "vscode-nls";
 
 const localize = nls.config({locale: process.env.VSCODE_NLS_CONFIG})();
+const provider = new BrowserContentProvider();
 
 export function activate(context: vscode.ExtensionContext) {
     const options = vscode.workspace.getConfiguration("previewServer");
@@ -14,7 +15,6 @@ export function activate(context: vscode.ExtensionContext) {
     startServer();
 
     // provider settings.
-    const provider = new BrowserContentProvider();
     const registration = vscode.workspace.registerTextDocumentContentProvider("http", provider);
     vscode.workspace.onDidChangeTextDocument((e: vscode.TextDocumentChangeEvent) => {
         if (e.document === vscode.window.activeTextEditor.document) {
@@ -41,23 +41,21 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     let disposable: any = vscode.commands.registerCommand("extension.preview", () => {
-        const previewUri = Utility.getUriOfActiveEditor();
-
         // set ViewColumn
         let viewColumn: vscode.ViewColumn;
+
         if (vscode.window.activeTextEditor.viewColumn < 3) {
             viewColumn = vscode.window.activeTextEditor.viewColumn + 1;
         } else {
             viewColumn = 1;
         }
 
-        return vscode.commands.executeCommand("vscode.previewHtml", previewUri, viewColumn, "Preview with WebServer").then(() => {
-        }, (reason) => {
-            console.error(reason);
-            if (!ignoreNotification) {
-                vscode.window.showErrorMessage(localize("previewError.text", "Preview failed."));
-            }
+        const panel = vscode.window.createWebviewPanel("preview-server", "Preview", viewColumn, {
+            enableScripts: true,
+            retainContextWhenHidden: true
         });
+        panel.webview.html = provider.provideTextDocumentContent();
+
     });
 
     let disposable2: any = vscode.commands.registerCommand("extension.launch", () => {
