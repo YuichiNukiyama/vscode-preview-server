@@ -26,7 +26,7 @@ export class BrowserContentProvider implements vscode.TextDocumentContentProvide
             <style>iframe { background-color: white } </style>
         </head>
         <body>
-            <iframe src="${uri}" frameBorder="0" width="100%" height="1000px" />
+            <iframe src="${uri}" frameBorder="0" width="100%" height="100%" />
         </body>
         </html>`;
     }
