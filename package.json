@@ -191,7 +191,7 @@
     "@types/node": "^7.0.70",
     "@types/opener": "^1.4.0",
     "del": "^3.0.0",
-    "event-stream": "^3.3.6",
+    "event-stream": "3.3.4",
     "gulp": "^4.0.0",
     "gulp-filter": "^5.1.0",
     "gulp-typescript": "^3.2.4",
