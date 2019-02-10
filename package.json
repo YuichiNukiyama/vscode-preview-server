@@ -2,7 +2,7 @@
   "name": "vscode-preview-server",
   "displayName": "Preview on Web Server",
   "description": "Preview Web Page on Web Server.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "yuichinukiyama",
   "author": {
     "name": "Yuichi Nukiyama"

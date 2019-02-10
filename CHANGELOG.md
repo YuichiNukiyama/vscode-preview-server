@@ -1,5 +1,9 @@
 ## Release Notes
 
+### 1.2.1
+ - improve preview layout (#35)
+ - change the shortcut key (#36)
+
 ### 1.2.0
  - update minimum VS Code version to 1.23
  - change vscode.previewHtml to WebView #32

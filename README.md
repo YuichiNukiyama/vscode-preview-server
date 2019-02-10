@@ -11,7 +11,7 @@ When you save files, this extension automatically reload browser or side panel (
 You can call these features from the context menu or editor menu.
 The main features are as follows.
 
-* `Preview on side panel (ctrl+shift+p)`: Open preview of HTML on side panel. With this feature, you can easely check the operation of HTML, CSS and JavaScript.
+* `Preview on side panel (ctrl+shift+v)`: Open preview of HTML on side panel. With this feature, you can easely check the operation of HTML, CSS and JavaScript.
 * `Launch on browser (ctrl+shift+l)`: Open Web Page on default browser. You can check all operation with web page.
 * `Stop the web server (ctrl+shift+s)`: Stop the web server. This feature can be used only from command palette.
 * `Resume the web server (ctrl+shift+r)`: Resume the web server. This feature can be used only from command palette.
