@@ -136,7 +136,7 @@
     "keybindings": [
       {
         "command": "extension.preview",
-        "key": "ctrl+shift+p"
+        "key": "ctrl+shift+v"
       },
       {
         "command": "extension.launch",
