@@ -65,10 +65,10 @@ export function activate(context: vscode.ExtensionContext) {
         const ignoreDefaultBrowser = options.get("ignoreDefaultBrowser") as boolean;
 
         if (browsers === null && !ignoreDefaultBrowser) {
-            return vscode.commands.executeCommand("vscode.open", uri);
+            return vscode.env.openExternal(uri);
         } else if (browsers !== null  && !ignoreDefaultBrowser) {
             Utility.openBrowser(browsers);
-            return vscode.commands.executeCommand("vscode.open", uri);
+            return vscode.env.openExternal(uri);
         } else if (browsers !== null && ignoreDefaultBrowser) {
             return Utility.openBrowser(browsers);
         } else {
@@ -99,7 +99,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         const uri = vscode.Uri.parse(`http://localhost:${port}`);
-        return vscode.commands.executeCommand("vscode.open", uri);
+        return vscode.env.openExternal(uri);
     });
 
     context.subscriptions.push(vscode.workspace.onDidChangeWorkspaceFolders(() => resumeServer()));
