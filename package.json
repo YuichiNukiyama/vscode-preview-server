@@ -16,7 +16,7 @@
     "url": "https://github.com/YuichiNukiyama/vscode-preview-server/issues"
   },
   "engines": {
-    "vscode": "^1.23.0"
+    "vscode": "^1.31.0"
   },
   "categories": [
     "Other"
