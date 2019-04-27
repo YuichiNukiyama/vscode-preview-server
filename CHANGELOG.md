@@ -1,5 +1,8 @@
 ## Release Notes
 
+### 1.2.2
+ - Change from using `vscode.open` to `openExternal` (#39)
+
 ### 1.2.1
  - improve preview layout (#35)
  - change the shortcut key (#36)
