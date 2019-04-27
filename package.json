@@ -192,19 +192,19 @@
     "@types/opener": "^1.4.0",
     "del": "^3.0.0",
     "event-stream": "3.3.4",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.1",
     "gulp-filter": "^5.1.0",
-    "gulp-typescript": "^3.2.4",
+    "gulp-typescript": "^5.0.1",
     "mocha": "^5.2.0",
     "run-sequence": "^2.2.1",
     "tslint": "^4.5.1",
-    "typescript": "^2.9.2",
+    "typescript": "^3.4.5",
     "vsce": "^1.50.0",
-    "vscode": "^1.1.21",
+    "vscode": "^1.1.33",
     "vscode-nls-dev": "^3.2.2"
   },
   "dependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.5",
     "opener": "^1.5.1",
     "vscode-nls": "^4.0.0"
   }
