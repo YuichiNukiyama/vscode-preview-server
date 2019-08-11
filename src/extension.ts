@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
     startServer();
 
     // provider settings.
-    const registration = vscode.workspace.registerTextDocumentContentProvider("http", provider);
+    const registration = vscode.workspace.registerTextDocumentContentProvider("preview", provider);
     vscode.workspace.onDidChangeTextDocument((e: vscode.TextDocumentChangeEvent) => {
         if (e.document === vscode.window.activeTextEditor.document) {
             const previewUri = Utility.getUriOfActiveEditor();

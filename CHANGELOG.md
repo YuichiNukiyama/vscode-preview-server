@@ -1,7 +1,8 @@
 ## Release Notes
 
-### 1.2.2
+### 1.3.0
  - Change from using `vscode.open` to `openExternal` (#39)
+ - Supported version is 1.35 or higher
 
 ### 1.2.1
  - improve preview layout (#35)
