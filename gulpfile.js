@@ -5,7 +5,6 @@ const ts = require("gulp-typescript");
 const typescript = require("typescript");
 const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
-const runSequence = require("run-sequence");
 const es = require("event-stream");
 const vsce = require("vsce");
 const nls = require("vscode-nls-dev");
@@ -18,26 +17,6 @@ const outDest = "out";
 
 // If all VS Code langaues are support you can use nls.coreLanguages
 const languages = ["jpn"];
-
-gulp.task("default", function(callback) {
-    runSequence("build", callback);
-});
-
-gulp.task("compile", function(callback) {
-    runSequence("clean", "internal-compile", callback);
-});
-
-gulp.task("build", function(callback) {
-    runSequence("clean", "internal-nls-compile", "add-i18n", callback);
-});
-
-gulp.task("publish", function(callback) {
-    runSequence("build", "vsce:publish", callback);
-});
-
-gulp.task("clean", function() {
-    return del(["out/**", "package.nls.*.json"]);
-});
 
 // ---- internal
 
@@ -79,3 +58,17 @@ gulp.task("add-i18n", function() {
 gulp.task("vsce:publish", function() {
     return vsce.publish();
 });
+
+// ---- external
+
+gulp.task("clean", function() {
+    return del(["out/**", "package.nls.*.json"]);
+});
+
+gulp.task("build", gulp.series("clean", "internal-nls-compile", "add-i18n"));
+
+gulp.task("compile", gulp.series("clean", "internal-compile"));
+
+gulp.task("publish", gulp.series("build", "vsce:publish"));
+
+gulp.task("default", gulp.series('build'));
