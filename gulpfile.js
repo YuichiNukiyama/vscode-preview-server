@@ -15,8 +15,7 @@ const inlineMap = true;
 const inlineSource = false;
 const outDest = "out";
 
-// If all VS Code langaues are support you can use nls.coreLanguages
-const languages = ["jpn"];
+const languages = [{ folderName: 'jpn', id: 'ja' }];
 
 // ---- internal
 
