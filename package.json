@@ -208,6 +208,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.26.7",
+    "gulp-sourcemaps": "^2.6.5",
     "opener": "^1.5.1",
     "vscode-nls": "^4.0.0"
   }
