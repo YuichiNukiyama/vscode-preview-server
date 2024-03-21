@@ -83,7 +83,7 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-`Preview on side panel` somethimes don't work with CDN, Link etc.
+`Preview on side panel` sometimes don't work with CDN, Link etc.
 
 ## Acknowledgements
 This extension use [browsersync](https://www.browsersync.io/).
